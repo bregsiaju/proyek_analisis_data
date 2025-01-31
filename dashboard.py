@@ -4,7 +4,7 @@ import seaborn as sns
 import streamlit as st
 sns.set_theme(style="dark")
 
-final_df = pd.read_csv("final_data.csv")
+final_df = pd.read_csv("assets/final_data.csv")
 
 datetime_columns = ["dteday"]
 final_df.sort_values(by="dteday", inplace=True)
@@ -19,7 +19,7 @@ min_date = final_df["dteday"].min()
 max_date = final_df["dteday"].max()
  
 with st.sidebar:
-    st.image("pedalgo.png")
+    st.image("assets/pedalgo.png")
     
     start_date, end_date = st.date_input(
         label="Filter Rentang Waktu",min_value=min_date,
