@@ -19,7 +19,7 @@ min_date = final_df["dteday"].min()
 max_date = final_df["dteday"].max()
  
 with st.sidebar:
-    st.image("./pedalgo.png")
+    st.image("pedalgo.png")
     
     start_date, end_date = st.date_input(
         label="Filter Rentang Waktu",min_value=min_date,
