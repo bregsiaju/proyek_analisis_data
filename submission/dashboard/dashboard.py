@@ -1,10 +1,15 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 sns.set_theme(style="dark")
 
-final_df = pd.read_csv("./final_data.csv")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Coba baca file CSV
+csv_path = os.path.join(current_dir, "final_data.csv")
+final_df = pd.read_csv(csv_path)
 
 datetime_columns = ["dteday"]
 final_df.sort_values(by="dteday", inplace=True)
@@ -37,7 +42,7 @@ weather_labels = {
 }
 
 with st.sidebar:
-    st.image("./pedalgo.png")
+    st.image(os.path.join(current_dir, "pedalgo.png"))
     
     st.subheader("Filter Data")
     start_date, end_date = st.date_input(
