@@ -4,9 +4,7 @@ import seaborn as sns
 import streamlit as st
 sns.set_theme(style="dark")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(BASE_DIR, "final_data.csv")
-final_df = pd.read_csv(csv_path)
+final_df = pd.read_csv("./final_data.csv")
 
 datetime_columns = ["dteday"]
 final_df.sort_values(by="dteday", inplace=True)
